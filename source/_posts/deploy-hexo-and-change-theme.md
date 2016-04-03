@@ -1,5 +1,7 @@
 ---
 title: 部署hexo
+tags: [hexo,部署]
+categories: 杂项
 ---
 
 ## 安装环境
