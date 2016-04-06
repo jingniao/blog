@@ -1,5 +1,6 @@
 ---
 title: 部署hexo
+date: 2016-04-04 00:21:35
 tags: [hexo,部署]
 categories: 运维
 ---
