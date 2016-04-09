@@ -40,12 +40,13 @@ server {
     listen       80;
     server_name  git.letus.club;
 
-    location / {
-        rewrite ^/(.*)$ https://git.letus.club/$1 permanent;
-    }
     location ^~ /.well-know/acme-challenge/ {
         alias /var/challenges/;
         try_files $uri =404;
+    }
+
+    location / {
+        rewrite ^/(.*)$ https://git.letus.club/$1 permanent;
     }
 }
 ```
@@ -59,7 +60,7 @@ python acme_tiny.py --account-key ./account.key --csr ./git.letus.club.csr --acm
 ```
 执行脚本的时候python库可能缺少，需要安装
 ```bash
-yum install yum install python-argparse
+yum install python-argparse
 ```
 上面的acme_tiny.py脚本输出
 ```bash
