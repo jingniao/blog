@@ -69,7 +69,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: yilia
-disqus_shortname: letusclub
+#disqus_shortname: letusclub
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

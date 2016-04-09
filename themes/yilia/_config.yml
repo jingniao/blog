@@ -22,10 +22,10 @@ rss: /atom.xml
 # Content
 excerpt_link: more
 fancybox: true
-mathjax: true
+mathjax: false
 
 # 是否开启动画效果
-animate: true
+animate: false
 
 # 是否在新窗口打开链接
 open_in_new: false
