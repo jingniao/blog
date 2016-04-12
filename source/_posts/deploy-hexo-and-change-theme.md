@@ -17,7 +17,6 @@ npm install -g hexo-cli
 ``` bash
 git clone git@git.oschina.net:zaita/jingniao.github.io.git
 cd jingniao.github.io
-git clone git@git.oschina.net:zaita/mytheme.git themes/yilia
 npm install
 ```
 ### 新建文章
