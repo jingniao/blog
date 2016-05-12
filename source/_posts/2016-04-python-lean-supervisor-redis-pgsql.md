@@ -20,6 +20,7 @@ command=/root/daemon.py
 autorestart=true
 ```
 command指向要执行的命令就可以了
+<!-- more --> 
 
 ### redis数据库的链接以及消息队列
 ```python

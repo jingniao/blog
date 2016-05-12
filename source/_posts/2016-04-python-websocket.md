@@ -18,6 +18,7 @@ websocket 是一种html5新的接口，以前服务器推送需要进行ajax等�
 *  django
 
 
+<!-- more --> 
 下面几个都是一个回音壁程序，也就是接受前端js发过来的websocket信息，然后将websocket再原路返回
 前端js：
 ```js

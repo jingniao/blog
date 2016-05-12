@@ -19,6 +19,7 @@ git clone git@git.oschina.net:zaita/jingniao.github.io.git
 cd jingniao.github.io
 npm install
 ```
+<!-- more --> 
 ### 新建文章
 
 ``` bash
