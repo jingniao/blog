@@ -25,7 +25,7 @@ command指向要执行的命令就可以了
 ### redis数据库的链接以及消息队列
 ```python
 import redis
-rd = redis.StrictRedis(host=”localhost”)
+rd = redis.StrictRedis(host="localhost")
 rd.publish(uid,testnum)
 #以上是向某个频道（channel）发布消息
 channel = rd.pubsub()
