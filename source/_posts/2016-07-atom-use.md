@@ -2,7 +2,7 @@
 title: atom使用
 mathjax: false
 date: 2016-07-21 07:26:22
-tags: [vscode,python]
+tags: [atom,python]
 categories: python
 ---
 # 开始使用atom
