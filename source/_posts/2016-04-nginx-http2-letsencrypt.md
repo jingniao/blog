@@ -57,7 +57,9 @@ wget https://raw.githubusercontent.com/diafygi/acme-tiny/master/acme_tiny.py
 ```
 验证并获取证书文件
 ```bash
-python acme_tiny.py --account-key ./account.key --csr ./git.letus.club.csr --acme-dir /root/challenges/ > ./signed.crt
+python acme_tiny.py --account-key ./account.key \
+    --csr ./git.letus.club.csr \
+    --acme-dir /root/challenges/ > ./signed.crt
 ```
 执行脚本的时候python库可能缺少，需要安装
 ```bash
@@ -83,7 +85,8 @@ nginx里的alias指向的地址跟指定的acme-dir地址应该一致，并且�
 ```
 获取上级证书并组成证书链
 ```bash
-wget -O - https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem > intermediate.pem
+wget -O - https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem \
+    > intermediate.pem
 cat signed.crt intermediate.pem > chained.pem
 ```
 到这里就配置成功了证书文件了

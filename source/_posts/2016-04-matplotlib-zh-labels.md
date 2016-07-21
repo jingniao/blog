@@ -22,11 +22,12 @@ matplotlib 1.5.1
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-zhfont = mpl.font_manager.FontProperties(fname='/usr/share/fonts/opentype/noto/NotoSansCJK.ttc')
+zhfont = mpl.font_manager.FontProperties(
+    fname='/usr/share/fonts/opentype/noto/NotoSansCJK.ttc')
 x2 = np.linspace(0.0, 2.0)
 y2 = np.cos(2 * np.pi * x2)
 plt.plot(x2, y2)
-plt.title(u'一个简单的函数 f = sin(2*pi*x)',  fontproperties=zhfont)
+plt.title(u'一个简单的函数 f = sin(2*pi*x)', fontproperties=zhfont)
 plt.show()
 ```
 效果： 

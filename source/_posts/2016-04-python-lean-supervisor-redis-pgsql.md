@@ -31,15 +31,22 @@ rd.publish(uid,testnum)
 channel = rd.pubsub()
 channel.subscribe(uid)
 msg = channel.parse_response()
-#这个方法会阻塞执行，如果redis消息队列里没有消息，则会停在这里。
+# 这个方法会阻塞执行，如果redis消息队列
+# 里没有消息，则会停在这里。
 rd_fd = channel.connection._sock.fileno()
-#获取频道的socket？类似于文件句柄的东西。这样就能用select或者epoll模型监听这个socket？从而判断是否有消息？这点存疑，以后用的时候在研究了
+# 获取频道的socket？类似于文件句柄的东西。这样就能
+# 用select或者epoll模型监听这个socket？从而判断是否
+# 有消息？这点存疑，以后用的时候在研究了
 ready = select.select([rd_fd], [], [], 4.0)
-#参数，三个列表，等待读取列表，等待写入列表，等待错误列表，最后是等待时间，这个函数会阻塞执行，这个是超时时间。
+# 参数，三个列表，等待读取列表，等待写入列表，
+# 等待错误列表，最后是等待时间，这个函数会阻塞
+# 执行，这个是超时时间。
 ```
 ### postgresql数据库，使用python链接
 ```python
-conn = psycopg2.connect(host=self.host, user=self.user, password=self.passwd) #链接到数据库
+conn = psycopg2.connect(host=self.host, 
+    user=self.user, password=self.passwd) 
+    #链接到数据库
 r = conn.cursor() #获取游标
 r.execute(self.query[‘config’]) #进行sql语句的使用
 r.close()
