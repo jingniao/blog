@@ -78,7 +78,7 @@ define([], function(){
 		var scaleW = scaleW;
 		
 		//滑动隐藏
-		document.getElementById("viewer-box").addEventListener("webkitTransitionEnd", function(){
+		document.getElementById("viewer-box").addEventListener("transitionend", function(){
 
 			if(_isShow == false){
 				document.getElementById("viewer").className = "hide";
