@@ -17,6 +17,21 @@
 </script>
 <%- js('http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min') %>
 <%- js('js/main') %>
+<script type="text/javascript">
+$(function($){
+    $.ajax({
+        type     : "GET",
+        url      : 'http://trace.letus.club/',
+        dataType : "jsonp",
+        success  : function(data) {
+                    $("#counterValue").text(data.view);
+                   },
+        error    : function() { 
+                    console.log("get counter value err")
+                   }
+    });
+});
+</script>
 
 
 <%- partial('google-analytics') %>
