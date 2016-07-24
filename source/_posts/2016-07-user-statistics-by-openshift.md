@@ -33,6 +33,6 @@ hexo挂着也有一段时间了，刚刚折腾的时候，也是有不少问题�
 * jsonp的使用，flask返回什么样的值，对于我这种只返回过json的值，jsonp应该返回什么值就有点抓瞎了。
 ### 项目地址
 虽然只是一个很简单的小程序，但是还是提交到git了。
-(http://git.oschina.net/zaita/statistics)[http://git.oschina.net/zaita/statistics]
+[http://git.oschina.net/zaita/statistics](http://git.oschina.net/zaita/statistics)
 # 感想
 应该说还是写得程序太少，今天遇到的问题在没有动手实际操作过之前，是不知道的，只有多写些程序才能够发现问题。
