@@ -28,7 +28,7 @@ class Persion(Base):
 除了`String`,`Integer`，还有其他类型，类型数量很多
 `Column`的的第一个参数是数据表中的列名，可以省略，当省略的时候，将这个类变量的名字作为数据表中的列名。
 访问`Persion.id`访问的是`persion`表中的`id`列
-
+<!-- more --> 
 
 ## 数据表初始化，以及简单查询
 
