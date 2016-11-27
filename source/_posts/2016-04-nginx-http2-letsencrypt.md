@@ -41,7 +41,7 @@ server {
     listen       80;
     server_name  git.letus.club;
 
-    location ^~ /.well-know/acme-challenge/ {
+    location ^~ /.well-known/acme-challenge/ {
         alias /var/challenges/;
         try_files $uri =404;
     }

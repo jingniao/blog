@@ -8,6 +8,7 @@ categories: python
 
 ## 前言 
 项目考虑使用守护进程，所以在看这方面的东西。管理使用supervisor来管理。很方便的使用supervisor
+<!-- more --> 
 ### supervisor使用
 1，安装supervisor
 ```bash
@@ -20,7 +21,6 @@ command=/root/daemon.py
 autorestart=true
 ```
 command指向要执行的命令就可以了
-<!-- more --> 
 
 ### redis数据库的链接以及消息队列
 ```python

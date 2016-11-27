@@ -9,7 +9,8 @@ categories: python
 websocket 是一种html5新的接口，以前服务器推送需要进行ajax等方式进行轮训，对服务器压力较高，随着新标准的推进，使用websocket在推送等方面已经是比较成熟了，并且各个浏览器对websocket的支持情况已经比较好了，只要不是太老古古董，对这些暂时不考虑。  
 使用websocket的时候，前端使用是比较规范的，js支持ws协议，感觉上类似于一个轻度封装的socket协议，只是以前需要自己维护socket的连接，现在能够以比较标准的方法来进行。  
 总的来说因为前端是js，所以后端对websocket支持最好的是socket.io，在搜索websocket相关的内容的时候感觉socket.io对这个的推广也是不少的，但是现在使用的是python，因为新学习python
-事件不长，各个框架都在接触一点还是有好处了。  
+事件不长，各个框架都在接触一点还是有好处了。 
+<!-- more -->  
 
 ## 常用框架：
 *  uwsgi
@@ -18,7 +19,6 @@ websocket 是一种html5新的接口，以前服务器推送需要进行ajax等�
 *  django
 
 
-<!-- more --> 
 下面几个都是一个回音壁程序，也就是接受前端js发过来的websocket信息，然后将websocket再原路返回
 前端js：
 ```js

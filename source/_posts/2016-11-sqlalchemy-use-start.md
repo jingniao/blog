@@ -8,6 +8,9 @@ categories: python
 # 前言
 学习并在工作中使用python的时间并不长，`django`的使用只能说用到的功能比较熟悉而已。并且工作中使用的并没有使用太多插件。只是将`django`作为一个请求接受以及返回格式化数据的东西。  
 之前使用到了数据库，使用的是django自带的orm框架，有点是简单，并且在django中使用方便。最近需要在django外的独立程序中使用数据库，虽然有方法使用django的orm，但是毕竟隔了一层，不太方便移植的特点，让我开始学习`sqlalchemy`这个大名鼎鼎的python数据库框架。以下就是我遇到的几个坑，应该是比较基础的，记录下。
+
+<!-- more --> 
+
 # 正文
 
 ## 类映射
@@ -28,7 +31,7 @@ class Persion(Base):
 除了`String`,`Integer`，还有其他类型，类型数量很多
 `Column`的的第一个参数是数据表中的列名，可以省略，当省略的时候，将这个类变量的名字作为数据表中的列名。
 访问`Persion.id`访问的是`persion`表中的`id`列
-<!-- more --> 
+
 
 ## 数据表初始化，以及简单查询
 
@@ -48,8 +51,8 @@ Base.metadata.reflect(engine)  # 将数据映射绑定到引擎
 Base.metadata.create_all(engine)  # 创建所有映射表
 ```
 
-如果有多个类似与`db.py`文件，需要一起进行初始化的话，只要引用的是同一个`Base`实例，运行`create_all()`时类已经被导入，则可以一起初始化。 
-
+如果有多个类似与`db.py`文件，需要一起进行初始化的话，只要引用的是同一个`Base`实例，运行`create_all()`时类已经被导入，则可以一起初始化。   
+>上述例子中`db_path`是数据库连接地址，这里只是sqlite简单的例子，如果是其他的类似`mysql`，`postgresql`等例子，会包含数据库名，驱动名，用户，密码，数据库名，[官方说明](http://docs.sqlalchemy.org/en/latest/core/engines.html)
 ### 插入数据库
 接着上节的`client.py`
 
