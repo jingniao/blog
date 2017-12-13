@@ -49,3 +49,9 @@ default-character-set=utf8mb4 # 客户端默认编码设置
 * `python2` 中`flask`，`jinja2` 内容默认使用的都是`unicode`，在使用`jinja2`模板的时候，会将传入的`str`类型进行`decode(sys.getdefaultencoding)`操作，所以如果传入 `'中文'` 而不是 `u'中文'`，则j`inja2`会抛出异常
 * `flask-sqlalchemy` 在使用`mysql`作为后端的时候，会自动添加`charset=utf8`参数，在某些编码情况下，会出现比较恼人的编码问题
 *  `sqlite3` 在存取数据只接受`unicode`，不接受`str`，mysql大部分驱动会接受`str`跟`unicode`
+
+## pymysql/sqlalchemy
+为了保证数据库的中文编码正确，以下是几点建议：
+* 数据表字段的编码应该兼容中文的，例如`latin1`就不兼容`中文`，尽量不要使用这种编码，不是说一定不能用，如果禁止使用`mysql驱动`的`unicode`编码功能，在驱动外进行手动`encode` `decode`，传递给数据库直接是`str`，或者说是字节数组，还是可以得到正确的内容的，这就是所谓的错进错出了，但这时候因为数据库无法正确理解数据内容，也就无法正常排序查找了。
+* 数据库连接字符集尽量使用与兼容中文的编码，例如`gbk`，`utf-8`，然后`python2`中输入给数据库的字符串使用`unicode`，不要使用`str`，让数据库驱动处理编码问题。
+* 当`sqlalchemy`的`engine`的`url`有`charset`设置的时候，数据库驱动会默认使用`use_unicode=True`，这时候查询到的`orm`中的`String`类型，会以`unicode`返回，这点要注意，但是如果没有设置`charset`，在`python2`下`pymysql`中会将`charset`默认设置为`latin1`，然后`use_unicode`会被设置为`False`，这时会导致返回的`String`类型的数据为`python2`中的`str`，所以为了防止混乱，在`engine`创建的时候设置`charset`是一个比较好的选择
