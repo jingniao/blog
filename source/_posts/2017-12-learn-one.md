@@ -55,3 +55,4 @@ default-character-set=utf8mb4 # 客户端默认编码设置
 * 数据表字段的编码应该兼容中文的，例如`latin1`就不兼容`中文`，尽量不要使用这种编码，不是说一定不能用，如果禁止使用`mysql驱动`的`unicode`编码功能，在驱动外进行手动`encode` `decode`，传递给数据库直接是`str`，或者说是字节数组，还是可以得到正确的内容的，这就是所谓的错进错出了，但这时候因为数据库无法正确理解数据内容，也就无法正常排序查找了。
 * 数据库连接字符集尽量使用与兼容中文的编码，例如`gbk`，`utf-8`，然后`python2`中输入给数据库的字符串使用`unicode`，不要使用`str`，让数据库驱动处理编码问题。
 * 当`sqlalchemy`的`engine`的`url`有`charset`设置的时候，数据库驱动会默认使用`use_unicode=True`，这时候查询到的`orm`中的`String`类型，会以`unicode`返回，这点要注意，但是如果没有设置`charset`，在`python2`下`pymysql`中会将`charset`默认设置为`latin1`，然后`use_unicode`会被设置为`False`，这时会导致返回的`String`类型的数据为`python2`中的`str`，所以为了防止混乱，在`engine`创建的时候设置`charset`是一个比较好的选择
+* `mysql`驱动`pymysql`对输入`str`跟`unicode`的处理差别：`pymysql/cursors.py Cursor._escape_args` 函数会进行参数编码检测，如果输入的参数是`unicode`类型的，则会调用`encode`使用连接编码进行编码
