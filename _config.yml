@@ -5,14 +5,14 @@
 # Site
 title: 惊鸟的技术小站
 subtitle: 坚持记录
-description: ceph,python,运维
+description: python,运维
 author: 惊鸟
 language: zh-Hans
 timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://letus.club
+url: https://letus.club
 root: /
 enforce_ssl: letus.club
 permalink: :year/:month/:day/:title/
