@@ -15,8 +15,8 @@ npm install -g hexo-cli
 ```
 ### 拿到博客的内容
 ``` bash
-git clone git@git.oschina.net:zaita/jingniao.github.io.git
-cd jingniao.github.io
+git clone https://github.com/jingniao/blog.git --recursive
+cd blog
 npm install
 ```
 <!-- more --> 
@@ -36,8 +36,6 @@ git status
 git add
 git commit -m ""
 git push
-#以上是将写的内容同步到osc，源码要先同步
-hexo generate
-hexo deploy
+接下来travis完成编译发布的工作
 #注意部署的话，需要先将github的公钥配置好
 ```
