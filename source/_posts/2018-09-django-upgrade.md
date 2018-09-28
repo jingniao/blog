@@ -12,6 +12,7 @@ pip install -U "Django<1.8"
 python manage.py runserver
 python manage.py migrate
 ```
+<!-- more -->
 # 中间更改项
 ## urls.py更改
 `from django.conf.urls import patterns`
