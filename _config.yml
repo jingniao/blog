@@ -12,9 +12,9 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://letus.club
+url: https://jingniao.github.io
 root: /
-enforce_ssl: letus.club
+enforce_ssl: jingniao.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -68,7 +68,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: next
 #disqus_shortname: letusclub
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
