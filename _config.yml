@@ -7,7 +7,7 @@ title: 惊鸟的技术小站
 subtitle: 坚持记录
 description: python,运维
 author: 惊鸟
-language: zh-Hans
+language: zh-CN
 timezone: 
 
 # URL
@@ -69,6 +69,8 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+theme_config:
+  scheme: Pisces
 #disqus_shortname: letusclub
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
